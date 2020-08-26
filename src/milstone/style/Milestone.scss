@@ -44,12 +44,14 @@
 .milestone-cta{
     width: 95%;
     margin: auto;
-    position: relative;
-    min-height: 900px;
-    max-height: 1200px;
+    min-height: 1300px;
     height: auto;
 }
-.milestone-cta::before{
+
+.timeline{
+    position: relative;
+}
+.timeline::before{
     content: " ";
     width: .45rem;
     min-height: 900px;

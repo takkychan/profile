@@ -58,9 +58,6 @@ export default function Milstone() {
     ]);
     return (
         <>
-            <div className="airballoon-cta">
-                <img src={airballoon} alt="" className="airballoon"/>
-            </div>
             <section id="milestone" className="milestone-section">
                 <div className="milestone-cta">
                     {/* <div className="codetag-cta">
@@ -71,28 +68,32 @@ export default function Milstone() {
                         <img src={closeCodetag} alt="" className="codetag close"/>
                         <img src={slashCodetag} alt="" className="codetag slash"/>
                     </div> */}
-                <div className="timeline">
-                    <div className="banner-cta">
-                        <div className="banner education"><span>Education</span></div>
-                        <div className="banner career"><span>Careere</span></div>
+                    <div className="airballoon-cta">
+                        <img src={airballoon} alt="" className="airballoon"/>
                     </div>
-                    {MilestoneItems.map(MilestoneItem => {
-                        const {date, title, type, link, isActive} = MilestoneItem;
-                        if (isActive){
-                        return (
-                        <>
-                            <div className={"items-container"}  id={type}>
-                                <span className="date">{date}</span>
-                                <div className="item-container" id={link}>
-                                    <div id="item" className={link}>{title}</div>
+                    
+                    <div className="timeline">
+                        <div className="banner-cta">
+                            <div className="banner education"><span>Education</span></div>
+                            <div className="banner career"><span>Careers</span></div>
+                        </div>
+                        {MilestoneItems.map(MilestoneItem => {
+                            const {date, title, type, link, isActive} = MilestoneItem;
+                            if (isActive){
+                            return (
+                            <>
+                                <div className={"items-container"}  id={type}>
+                                    <span className="date">{date}</span>
+                                    <div className="item-container" id={link}>
+                                        <div id="item" className={link}>{title}</div>
+                                    </div>
                                 </div>
-                            </div>
-                        </>
-                        )
+                            </>
+                            )
+                            }
                         }
-                    }
-                    )}
-                </div>
+                        )}
+                    </div>
                 </div>
             </section>
         </>
