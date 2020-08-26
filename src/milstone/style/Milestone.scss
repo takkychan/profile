@@ -40,22 +40,22 @@
 
 //main body of Milstone
 .milestone-cta{
+    @include lg{
+        height: 850px;
+    }
+    @include mobile{
+        height: 750px;
+    }
     width: 95%;
     margin: auto;
     position: relative;
-    min-height: 100vh;
+    height: 900px;
     max-height: 1200px;
-    height: auto;
 }
-.milestone-cta::before{
-    @include sm{
-        min-height: 100vh;
-    }
+.milestone-cta::after{
     content: " ";
     width: .45rem;
-    min-height: calc(100vh + 5rem);
-    max-height: 1200px;
-    height: auto;
+    height: inherit;
     background-color: $dark;
     position: absolute;
     top :0;
