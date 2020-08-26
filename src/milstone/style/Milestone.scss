@@ -43,14 +43,14 @@
     width: 95%;
     margin: auto;
     position: relative;
-    min-height: calc(100vh + 150px);
+    min-height: calc(100vh + 7.5rem);
     max-height: 1200px;
     height: auto;
 }
 .milestone-cta::before{
     content: " ";
     width: .45rem;
-    min-height: calc(100vh + 150px);
+    min-height: calc(100vh + 7.5rem);
     max-height: 1200px;
     height: auto;
     background-color: $dark;
