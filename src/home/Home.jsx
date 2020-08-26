@@ -17,6 +17,7 @@ import cloud from '../img/cloud.svg'
 import openCodetag from '../img/open-codetag.png'
 import closeCodetag from '../img/close-codetag.png'
 import slashCodetag from '../img/slash-codetag.png'
+
 // import openCodetag from '../img/open-codetag.svg'
 // import closeCodetag from '../img/close-codetag.svg'
 // import slashCodetag from '../img/slash-codetag.svg'
@@ -27,7 +28,8 @@ export default function Home() {
         <>
             <section id="home" className="home-section">
                 <Header />
-
+                <img src={cloud} alt="" className="cloud-img left"/>
+                <img src={cloud} alt="" className="cloud-img right"/>
                 <div className="home-cta">
                     <div className="intro">
                         <div className="welcome">
