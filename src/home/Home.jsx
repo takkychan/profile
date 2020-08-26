@@ -14,9 +14,12 @@ import logo from '../img/Logo.png'
 import stamp from '../img/Stamp.svg'
 // import airballoon from '../img/airballoon.png'
 import cloud from '../img/cloud.svg'
-import openCodetag from '../img/open-codetag.svg'
-import closeCodetag from '../img/close-codetag.svg'
-import slashCodetag from '../img/slash-codetag.svg'
+import openCodetag from '../img/open-codetag.png'
+import closeCodetag from '../img/close-codetag.png'
+import slashCodetag from '../img/slash-codetag.png'
+// import openCodetag from '../img/open-codetag.svg'
+// import closeCodetag from '../img/close-codetag.svg'
+// import slashCodetag from '../img/slash-codetag.svg'
 
 export default function Home() {
 
