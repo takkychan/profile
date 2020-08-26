@@ -59,6 +59,7 @@ export default function Milstone() {
     return (
         <>
             <section id="milestone" className="milestone-section">
+                <img src={airballoon} alt="" className="airballoon"/>
                 <div className="milestone-cta">
                     {/* <div className="codetag-cta">
                         <img src={openCodetag} alt="" className="codetag open"/>
@@ -68,14 +69,12 @@ export default function Milstone() {
                         <img src={closeCodetag} alt="" className="codetag close"/>
                         <img src={slashCodetag} alt="" className="codetag slash"/>
                     </div> */}
-                    <div className="airballoon-cta">
-                        <img src={airballoon} alt="" className="airballoon"/>
-                    </div>
-                    
+              
+
                     <div className="timeline">
                         <div className="banner-cta">
                             <div className="banner education"><span>Education</span></div>
-                            <div className="banner career"><span>Careers</span></div>
+                            <div className="banner career"><span>CareerS</span></div>
                         </div>
                         {MilestoneItems.map(MilestoneItem => {
                             const {date, title, type, link, isActive} = MilestoneItem;
