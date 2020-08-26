@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="286" height="136" viewBox="0 0 286 136">
+  <defs>
+    <filter id="cloud" x="0" y="0" width="286" height="136" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#cloud)">
+    <path id="cloud-2" data-name="cloud" d="M-2041.935-1362.247A20.065,20.065,0,0,1-2062-1382.312a20.072,20.072,0,0,1,15.973-19.647,15.914,15.914,0,0,1-.562-4.2,15.9,15.9,0,0,1,15.9-15.9h8.968c.885-17.7,17.2-31.8,37.206-31.8a41.543,41.543,0,0,1,8.872.951c6.5-9.057,17.777-15.132,30.712-15.331,12.894-.2,24.373,5.487,31.233,14.291,1.54-.177,3.109-.281,4.7-.306,21.637-.334,39.53,14.005,40.441,32.195h18.4a15.9,15.9,0,0,1,15.9,15.9,15.939,15.939,0,0,1-.453,3.785h8.643A20.065,20.065,0,0,1-1806-1382.312a20.065,20.065,0,0,1-20.064,20.065Z" transform="translate(2075 1480.25)" fill="#fff"/>
+  </g>
+</svg>
