@@ -1,0 +1,203 @@
+@import '../../App.scss';
+
+#home{
+    height: auto;
+}
+
+.home-cta{
+    @include xl{
+        display: flex;
+        flex-flow: column;
+        height: auto;
+    }
+    @include md{
+        width: 85%;
+    } 
+    padding: 3rem 0 0 0;
+    width: 80%;
+    height: 800px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: (repeat(2, 1fr));
+    gap: 1.5rem;
+}
+
+
+.intro{
+    @include xl{
+        height: 360px;
+        justify-content: space-between;
+    }
+    @include md{
+        height: 360px;
+        justify-content: space-around;
+    }
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    height: 700px;
+    
+    .welcome{
+        .greetings, .myname{
+            font-family: $article-font;
+            font-weight: 700;
+        }
+
+        .greetings{
+            @include md{
+                font-size: calc(3rem * .8);
+            }
+            @include mobile{
+                font-size: calc(3rem * .7);
+            }
+            font-size: 3rem;
+            color: $highlight;
+        }
+        .myname{
+            @include md{
+                font-size: calc(3.2rem * .8);
+            }
+            @include mobile{
+                font-size: calc(3.2rem * .7);
+            }
+            font-size: 3.2rem;
+            padding-bottom: 1rem;
+        }
+    }
+
+    .codetag-cta{
+        @include xl{
+            align-self: flex-end;
+        }
+        @include md{
+            align-self: center;
+            .codetag.slash{
+                width: 7rem;
+            }
+            .codetag.open, .codetag.close{
+                width: 3rem;
+            }
+        }
+        @include mobile{
+            .codetag.slash{
+                width: calc(7rem * .8);
+            }
+            .codetag.open, .codetag.close{
+                width: calc(3rem * .8);
+            }
+        }
+        position: relative;
+        align-self: center;
+        display: flex;
+        align-items: center;
+
+        .dynamic{
+            @include md{
+                font-size: calc(4.35rem * .8);
+            }
+            @include mobile{
+                font-size: calc(4.35rem * .68);
+            }
+            font-size: 4.3rem;
+            .i, .word{
+                font-family: $article-font;
+                font-weight: 700;
+                padding: 0 1rem;
+                @include mobile{
+                    padding: 0 .3rem;
+                }
+                
+            }
+            .i{
+                color: $highlight;
+            }
+        }
+
+        .slash{
+            position: absolute;
+            top:    50;
+            left:  50%;
+            transform: translate(-50%, 0);
+            z-index: -1;
+        }
+
+    }
+}
+
+.intro-msg{
+    @include xl{
+        padding: 13% 0;
+        width: 100%;
+    }
+    justify-self: flex-end;
+    align-self: center;
+    .intro-card{
+        @include xl{
+            width: 100%;
+        }
+        box-shadow: 0px 3px 20px rgba(black, .16);
+        height: auto;
+        width: 30rem;
+        align-self: center;
+        border-radius: 15px;
+
+        .card-header{
+            .aboutme{
+                @include md{
+                    font-size: calc(1.7rem * .8);
+                }
+                @include md{
+                    font-size: calc(1.7rem * .7);
+                }
+                font-size: 1.7rem;
+                font-family: $article-font;
+                font-weight: 700;
+                padding: 1.5rem 0 .5rem 3rem;
+            }
+            .border{
+                width: 35%;
+                height: .6rem;
+                background-color: $highlight;
+            }
+        }
+
+        .card-body{
+            @include md{
+                font-size: calc(.95rem * .8);
+                padding: 1.5rem;
+            }
+            font-size: .95rem;
+            font-family: $article-font;
+            padding: 2.5rem;
+            line-height: 2.5;
+            letter-spacing: 1.3px;
+        }
+
+        .card-footer{
+            display: flex;
+            flex-flow: column;
+            align-items: flex-end;
+            padding-bottom: 2rem; 
+            .resume{
+                @include md{
+                    font-size: calc(1.6rem * .8);
+                    padding:  .5rem 10% .5rem 0;
+                }
+                @include md{
+                    font-size: calc(1.6rem * .7);
+                }
+                font-size: 1.7rem;
+                font-family: $article-font;
+                font-weight: 700;
+                padding:  .5rem 3rem .5rem 0;
+            }
+            .border{
+                width: 67%;
+                height: .6rem;
+                background-color: $highlight;
+            }
+        }
+
+    }
+}
+

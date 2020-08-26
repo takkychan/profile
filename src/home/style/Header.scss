@@ -1,0 +1,57 @@
+@import '../../App.scss';
+
+.header{
+    @include lg{
+        width: 95%;
+    }
+    @include sm{
+        width: 100%;
+    }
+    display: grid;
+    grid-template-columns: .5fr 1fr ;
+    padding:  2rem 2rem;
+    overflow: hidden;
+    width: 90%;
+    margin: auto;
+
+    .logo{
+        @include lg{
+            width: calc(11rem * .8 ) ;
+        }
+        @include mobile{
+            width: calc(11rem * .7) ;
+        }
+        width: 11rem;
+        cursor: pointer;
+    }
+
+    .nav-items{
+        justify-self: flex-end;
+        display: flex;
+        align-items: center;
+        .nav-item{
+            font-size: 1.25rem;
+            padding: 0 1.5rem;
+            @include xl{
+                display: none;
+            }   
+        }
+        .hamburger{
+            @include xl{
+                display: block;
+                width: 3rem;
+                align-self: center;
+            }
+            @include lg{
+                width: calc(3rem * .9);
+            }
+            @include mobile{
+                width: calc(3rem * .8);
+            }
+
+            display: none;
+        }
+    }
+
+
+}
