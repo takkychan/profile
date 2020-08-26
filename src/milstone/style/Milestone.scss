@@ -43,14 +43,17 @@
     width: 95%;
     margin: auto;
     position: relative;
-    min-height: calc(100vh + 3.5rem);
+    min-height: 100vh;
     max-height: 1200px;
     height: auto;
 }
 .milestone-cta::before{
+    @include sm{
+        min-height: 100vh;
+    }
     content: " ";
     width: .45rem;
-    min-height: calc(100vh + 3.5rem);
+    min-height: calc(100vh + 5rem);
     max-height: 1200px;
     height: auto;
     background-color: $dark;
