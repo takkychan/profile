@@ -8,11 +8,12 @@ import React, {useState, useEffect} from 'react'
 //components
 // import Landing from './landing/Landing.jsx'
  import Home from './home/Home.jsx'
-// import Milestone from './milstone/Milestone.jsx'
+import Milestone from './milstone/Milestone.jsx'
 // import Skills from './skills/Skills.jsx'
-// import Footer from './footer/Footer.jsx'
+import Footer from './footer/Footer.jsx'
 //css
 import './App.scss'
+import Milstone from './milstone/Milestone.jsx'
 //images
 
 
@@ -20,6 +21,8 @@ function App() {
   return (
     <>
       <Home />
+      <Milestone />
+      <Footer />
     </>
   );
 }
