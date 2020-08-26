@@ -74,7 +74,7 @@ export default function Milstone() {
                 <div className="timeline">
                     <div className="banner-cta">
                         <div className="banner education"><span>Education</span></div>
-                        <div className="banner career"><span>Career</span></div>
+                        <div className="banner career"><span>Careere</span></div>
                     </div>
                     {MilestoneItems.map(MilestoneItem => {
                         const {date, title, type, link, isActive} = MilestoneItem;
