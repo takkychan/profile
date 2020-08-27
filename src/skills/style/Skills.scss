@@ -10,10 +10,11 @@
     position: relative;
     width: 100%;
     height: auto;
-    min-height: 50rem;
-    height: 50rem;
+    min-height: 55rem;
+    height: 55rem;
     display: flex;
     flex-flow: column;
+    margin: 0 0 2rem 0;
     //CodeTag
     .codetag-cta{
         @include xl{
@@ -172,22 +173,26 @@
 
 //Modal
 .Modal{
+    @include xl{
+        width: 87%;
+    }
     @include lg{
-        width: 90vw;
+        width: 90%;
     }
     @include md{
         flex-direction: column;
-        height: 77vh;
+     
     }
     @include mobile{
         flex-direction: column;
-        height: 65vh;
+     
     }
     box-shadow:  0px 3px 30px rgba(black, .3);
     outline: none;
     position: absolute;
-    width: 75vw;
-    height: 80vh;
+    width: 80%;
+    max-height: 90%;
+    height: 90%;
     border-radius: .93rem;
     top: 50%;
     left: 50%;
@@ -288,7 +293,11 @@
                 .item-title{
                     @include lg{
                         font-size: calc(1.3rem * .85);
-                        margin: 0 auto auto auto;
+                        margin: auto;
+                    }
+                    @include md{
+                        font-size: calc(1.3rem * .85);
+                        margin: auto auto 0 auto;
                     }
                     @include mobile{
                         display: none;
