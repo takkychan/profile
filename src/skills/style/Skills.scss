@@ -333,6 +333,7 @@
                         
                         @include md{
                             width: calc(4rem * .8);
+                            padding-top: 1.5%;
                         }
                         @include mobile{
                             width: calc(4rem * .7);
