@@ -257,19 +257,19 @@
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
-            @include md{
+             @include sm{
                 .skill-details:nth-child(odd){
-                    background-color: $default-bg;
-                }
-                width: 100%;
-            }
+                     background-color: $default-bg;
+                 }
+                 width: 100%;
+             }
             .skill-details{
                 @include xl{
                   
                    
                 }
 
-                @include md{
+                @include sm{
                     flex-flow: column;
                     height: 100%;
                     justify-content: space-around;
@@ -277,7 +277,7 @@
                 }
                 display: flex;
                 .skill-subject{
-                    @include md{
+                    @include sm{
                         margin:  0;
                         width: 100%;
                     }
@@ -293,10 +293,10 @@
                             width: calc(4.2rem * .8);
                         }
                         @include md{
-                            width: calc(4.2rem * .6);
+                            width: calc(4.2rem * .7);
                         }
                         @include mobile{
-                            width: calc(4.2rem * .5);
+                            width: calc(4.2rem * .6);
                         }
                         margin: auto 0;
                         width: 4.2rem;
@@ -316,7 +316,7 @@
                 }
                         
                 .rating-group{
-                    @include md{
+                    @include sm{
                         width: 100%;
                     }
                     width: 65%;
@@ -332,10 +332,10 @@
                         }
                         
                         @include md{
-                            width: calc(4rem * .7);
+                            width: calc(4rem * .8);
                         }
                         @include mobile{
-                            width: calc(4rem * .65);
+                            width: calc(4rem * .7);
                             margin: 0 3% 0 0;
                         }
                         width: 4.5rem;
