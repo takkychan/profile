@@ -280,45 +280,38 @@ export default function Skills() {
                     onRequestClose={() => setopenEgg(false)}
                     closeTimeoutMS={200}
                 >
-                    <div className="items-container">
-                        <div className="skill-title">
-                            {currentSkill ? currentSkill.title:null}
+                    <div className="skill-card">
+                        <div className="skill-card-header">
+                            <span className="skill-card-title">
+                                {currentSkill ? currentSkill.title:null}
+                            </span>
                         </div>
                         <div className="border"></div>
-                        <div className="item-container">
+                        <div className="skill-content">
                             {
                                 currentSkill ?
                                 currentSkill.item.map((myitem) => {
                                   return (
                                     <>
-                                        <div className="item-group">
-                                            <img className="skillImg" src={myitem.skillImg} alt="" />
-                                            <span className="item-title">
-                                                {myitem.skillName}
-                                            </span>
+                                        <div className="skill-details">
+                                            <div className="skill-subject">
+                                                <img className="skill-logo" src={myitem.skillImg} alt="" />
+                                                <span className="skill-item-title">
+                                                    {myitem.skillName}
+                                                </span>     
+                                            </div>
+                                            <div className="rating-group">
+                                                {
+                                                    <Puzzle rating={myitem.rating} puzzle={puzzle}/>
+                                                }
+                                            </div>
+
                                         </div>
                                     </>
                                   )
                                 }): null
                             }
                         </div>
-                    </div>
-                    <div className="ratings-container">
-                            {
-                                
-                                currentSkill ?
-                                currentSkill.item.map((myitem) => {
-                                  return (
-                                    <>
-                                        <div className="rating-group">
-                                            {
-                                                 <Puzzle rating={myitem.rating} puzzle={puzzle}/>
-                                            }
-                                        </div>
-                                    </>
-                                  )
-                                }): null
-                            }
                     </div>
                     <button className="close-btn"  onClick= {()=> {
                                         setopenEgg(false);
