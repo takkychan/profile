@@ -1,0 +1,436 @@
+@import '../../App.scss';
+
+.skills{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 400px;
+    height: auto;
+    display: flex;
+    flex-flow: column;
+    //CodeTag
+    .codetag-cta{
+        @include xl{
+            position: static;
+            transform: none;
+            height: 18rem;
+            padding: 0 0 1rem 0;
+        }
+        @include md{
+            align-self: center;
+            height: calc(18rem * .8);
+            .codetag.slash{
+                width: 6rem;
+            }
+            .codetag.open, .codetag.close{
+                width: 1.7rem;
+            }
+        }
+        @include mobile{
+            .codetag.slash{
+                width: calc(7rem * .8);
+            }
+            .codetag.open, .codetag.close{
+                width: calc(1.7rem * .8);
+            }
+        }
+        position: absolute;
+        top: 15%;
+        right: 5%;
+        transform: translate(0, -50%);
+        align-self: center;
+        display: flex;
+        align-items: center;
+
+        .section-header{
+            @include md{
+                font-size: calc(3.5rem * .65);
+                padding: 0 1rem;
+            }
+            @include mobile{
+                font-size: calc(3.5rem * .68);
+                padding: 0 .5rem;
+            }
+            font-size: 3.5rem;
+            padding: 0 1.5rem;
+        }
+
+        .codetag{
+            width: 2rem;
+            align-self: center;
+            filter: drop-shadow(0px 3px 2px rgba(black, .16));
+        }
+
+        .slash{
+            position: absolute;
+            width: 7rem;
+            top:    50;
+            left:  50%;
+            transform: translate(-50%, 0);
+            z-index: -1;
+        }
+
+    }
+
+    .crawl{
+        align-self: center;
+        width: 100%;
+        margin: 0 0 5% 0;
+        // animation: crawl-spring-xxl 2s infinite;
+        height:auto;
+        width: 11.25rem;
+        transform: translate(0, -5%);
+    }
+
+
+    .skills-container{
+        @include xl{
+            grid-template-columns: 1fr 1fr;
+            width: 90vw;
+            margin: 2rem auto 2rem auto;
+        }
+        @include md{
+            width: 80vw;
+            grid-template-columns: 1fr;
+            // margin-top: 20%;
+        }
+        // @include sm{
+        //     margin-top: 25%;
+        // }
+        // @include mobile{
+        //     margin-top: 35%;
+        // }
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3.525rem;
+        width: 75vw;
+        min-height: 53vh;
+        height: auto;
+        margin: 10rem auto 0 auto;
+        .skill-container{
+            position: relative;
+            background-color: $bright;
+            display: flex;
+            flex-flow: column;
+            border-radius: .65rem;
+            box-shadow:0px 3px 15px rgba(black, .16);
+            .egg-btn{
+                cursor: pointer;
+                border: none;
+                .egg{
+                    @include lg{
+                        width: 4.375rem;
+                    }
+                    position: absolute;
+                    width: 5.63rem;
+                    bottom: -10%;
+                    right: -7%;
+                    transform: rotate(18deg);
+                    animation: egg-vibrate 5s infinite ease;
+                    filter: drop-shadow(0px 3px 7px rgba(black, .3));
+                }
+                .egg:hover{
+                    animation: egg-hover .25s 2 ease;
+                }
+            }
+
+           
+            .skill-title{
+                padding: .93rem 0 5px 0;
+                text-align: center;
+                font-size: 1.375rem;
+            }
+            .border{
+                width: 50%;
+                border-bottom: 5px solid $highlight;
+            }
+            .skill-des{
+                padding: .95rem 7% 3.125rem 7%;
+            }
+        }
+
+    }
+
+    .rectangle{
+        position: absolute;
+        z-index: -1;
+        bottom: 8%;
+        left:right;
+        width: 100%;
+        height: 15.6rem;
+        transform: translate(0, -25%);
+        background-color: $default-bg;
+    }
+}
+
+
+//Modal
+.Modal{
+    @include lg{
+        width: 90vw;
+    }
+    @include md{
+        flex-direction: column;
+        height: 77vh;
+    }
+    @include mobile{
+        flex-direction: column;
+        height: 65vh;
+    }
+    box-shadow:  0px 3px 30px rgba(black, .3);
+    outline: none;
+    position: absolute;
+    width: 75vw;
+    height: 80vh;
+    border-radius: .93rem;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    display: flex;
+    background-color: $bright;
+    transition: all 250ms ease;
+    transform: translate(-50%, -50%) scale(.1);
+    //SKills
+    .items-container{
+        @include lg{
+            width: 50%;
+        }
+        @include md{
+            width: 100%;
+            height: auto;
+            border-radius: .93rem .93rem 0 0;
+        }
+        width: 40%;
+        background-color: $default-bg;
+        display: flex;
+        flex-direction: column;
+        border-radius: .93rem 0 0 .93rem;
+        .skill-title{
+            @include xl{
+                font-size: calc(2rem * .8);
+            }
+            @include lg{
+                font-size: calc(2rem * .7);
+            }
+            @include md{
+                width: 100%;
+                margin: 0;
+                padding: 2rem;
+                font-size: calc(2rem * .8);
+            }
+            @include mobile{
+                font-size: calc(2rem * .7);
+            }
+            font-size: 1.875rem;
+            padding: 2rem;
+            line-height: 0;
+        }
+        .border{
+            @include md{
+                
+            }
+            width: 50%;
+            height: .625rem;
+            float: left;
+            background-color: $highlight;
+            margin: 0 0 1rem 0;
+        }
+        .item-container{
+            @include md{
+                width: 100%;
+                height: 100%;
+                flex-flow: row;
+                padding: 10px;
+            }
+            width: 100%;
+            height: 80%;
+            margin: auto;
+            display: flex;
+            align-self: center;
+            justify-content: space-around;
+            flex-direction: column;
+            .item-group{
+                @include md{
+                   display : flex;
+                   flex-flow: column;
+                }
+               display: grid;
+               width: 80%;
+               height: auto;
+               margin: 0 auto;
+               grid-template-columns: 1fr 1fr ;
+               align-items: center;
+                .skillImg{
+                    @include lg{
+                        width: calc(5.3rem * .75);
+                        margin: 0 auto auto auto;
+                    }
+                    @include md{
+                        width: calc(5.3rem * .68);
+                    }
+                    @include mobile{
+                        width: calc(5.3rem * .5);
+                        margin: 0 0 1rem 0;
+                    }
+                    width: 4.5rem;
+                    align-self: center;
+                    margin: auto;
+                }
+                .item-title{
+                    @include lg{
+                        font-size: calc(1.3rem * .85);
+                        margin: 0 auto auto auto;
+                    }
+                    @include mobile{
+                        display: none;
+                    }
+                    text-align: center;
+                    font-size: 1.35rem;
+                }
+            }
+        }
+    }
+    .ratings-container{
+        @include md{
+            margin: 5% auto auto auto;
+            border-radius: 0 0 15px 15px;
+            flex-flow: row;
+            justify-content: space-around;
+            align-content: space-evenly;
+        }
+        .rating-group{
+            @include md{
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+            }
+        }
+        width: 100%;
+        height: 80%;
+        background-color: $bright;
+        border-radius: 0 .93rem .93rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 12.5vh 0 0 0;
+        padding: 0 0 0 3vw;
+        .puzzle{
+            @include xl{
+                width: 4.4rem
+            }
+            @include md{
+                margin: .625rem 0;
+            }
+            @include mobile{
+                width: 3.5rem;
+            }
+            margin: 0 2%;
+        }
+    }
+
+    .close-btn, .arrow-btn{
+        border: none;
+        cursor: pointer;
+    }
+
+
+    .close, .arrow{
+        @include sm{
+            width: calc(2.55rem * .8);
+        }
+        position: absolute;
+        right: 2%;
+        opacity: .85;
+        width: 2.55rem;
+    }
+   
+    .close:hover{
+        transform: scale(1.01);
+        opacity: 1;
+    }
+    .arrow:hover{
+        transform: scale(1.01) translate(-50%, -50%);
+        opacity: 1;
+    }
+
+    .close{
+        top: 3%;
+    }
+    .arrow{
+        display: none;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+}
+
+.Overlay{
+    z-index: 2;
+    background-color: rgba($dark, .2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: all 250ms ease;
+}
+
+  .ReactModal__Overlay--after-open {
+    opacity: 1;
+  }
+  
+  .ReactModal__Overlay--before-close {
+    opacity: 0;
+  }
+
+  .ReactModal__Overlay--after-open .Modal{
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .ReactModal__Overlay--before-close .Modal{
+    transform: translate(-50%, -50%) scale(.1);
+  }
+
+  @keyframes egg-hover{
+    from{
+        transform: scale(1.05) rotate(18deg);
+    }
+    50% {
+        transform: scale(1.05)rotate(-20deg);
+    }
+
+    to {
+        transform: scale(1.05) rotate(18deg);
+    }
+}
+
+@keyframes egg-vibrate{
+    from{
+        transform: scale(1.05) rotate(18deg);
+    }
+    5% {
+        transform: scale(1.05)rotate(-20deg);
+    }
+    10%{
+        transform: scale(1.05) rotate(18deg);
+    }
+    to{
+        transform: scale(1.05) rotate(18deg);
+    }
+}
+
+// @keyframes crawl-spring-xxl{
+//     from{
+//         transform:  rotate(3deg);
+//     }
+//     50% {
+//         transform: rotate(-5deg);
+//     }
+
+//     to {
+//         transform: rotate(3deg);
+//     }
+// }
+

@@ -161,6 +161,8 @@
     max-width: 1000px;
     width: 100%;
     margin: auto;
+
+    //Banner
     .banner-cta{
         @include md{
             justify-content: space-between;
@@ -199,80 +201,83 @@
             clip-path: polygon(100% 0%, 90% 52%, 100% 100%, 10% 100%, 0 56%, 10% 0);
         }
     }
-}
 
-
-.items-container{
-    z-index: 1;
-    cursor: pointer;
-    position: relative;
-    margin: 2.81rem 0 0 0;
-}
-#career{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-    .date::before{
-        content: "Details ";
-        color: $highlight;
-        margin: .625rem;
-        filter: drop-shadow(0px 2px 2px rgba(black, .16));
+    //Timeline Body
+        
+    .items-container{
+        z-index: 1;
+        cursor: pointer;
+        position: relative;
+        margin: 2.81rem 0 0 0;
+    }
+    #career{
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: column;
+        .date::before{
+            content: "Details ";
+            color: $highlight;
+            margin: .625rem;
+            filter: drop-shadow(0px 2px 2px rgba(black, .16));
+            cursor: pointer;
+        }
+        .item-container{
+            border-radius: 0 .92rem .92rem .92rem;
+        }
+    }
+    .items-container::after{ 
+        @include lg{
+            width: .75rem;
+            height: .75rem;
+        }
+        @include md{
+            width: .75rem;
+            height: .75rem;
+        }
+        content: " ";
+        background-color: $default-bg;
+        width: 1rem;
+        height: 1rem;
+        border: .37rem solid $highlight;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        transition: all .2s ease-in-out;
         cursor: pointer;
     }
+
+    .date{
+        @include md{
+            font-size: calc(14px * .8);
+        }
+        font-size: .8rem;
+        margin: 0 0 0 3vw;
+        
+    }
     .item-container{
-        border-radius: 0 .92rem .92rem .92rem;
+        @include lg{
+            font-size: calc(1.19rem * .85);
+        }
+        @include mobile{
+            font-size: calc(1.19rem * .7);
+        }
+        width: 40%;
+        padding: 2% 5%;
+        margin: .625rem 0 0 3vw;
+        background-color: $bright;
+        font-size: 1.19rem;
+        text-align: center;
+        border-radius: .925rem 0 .925rem .925rem;
+        box-shadow: 0px 3px 13px rgba(black, .16);
+        .item{
+            margin: auto;
+        }
     }
-}
-.items-container::after{ 
-    @include lg{
-        width: .75rem;
-        height: .75rem;
-    }
-    @include md{
-        width: .75rem;
-        height: .75rem;
-    }
-    content: " ";
-    background-color: $default-bg;
-    width: 1rem;
-    height: 1rem;
-    border: .37rem solid $highlight;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    transition: all .2s ease-in-out;
-    cursor: pointer;
+
 }
 
-.date{
-    @include md{
-        font-size: calc(14px * .8);
-    }
-    font-size: .8rem;
-    margin: 0 0 0 3vw;
-    
-}
-.item-container{
-    @include lg{
-        font-size: calc(1.19rem * .85);
-    }
-    @include mobile{
-        font-size: calc(1.19rem * .7);
-    }
-    width: 40%;
-    padding: 2% 5%;
-    margin: .625rem 0 0 3vw;
-    background-color: $bright;
-    font-size: 1.19rem;
-    text-align: center;
-    border-radius: .925rem 0 .925rem .925rem;
-    box-shadow: 0px 3px 13px rgba(black, .16);
-    .item{
-        margin: auto;
-    }
-}
 
 
