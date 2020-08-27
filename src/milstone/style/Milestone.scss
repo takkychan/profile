@@ -3,6 +3,94 @@
 .milestone-section{
     display: flex;
     flex-direction: column;
+    position: relative;
+
+
+    //CodeTag
+    .codetag-cta{
+        @include xl{
+            position: static;
+            transform: none;
+            height: 18rem;
+            padding: 0 0 1rem 0;
+        }
+        @include md{
+            align-self: center;
+            height: calc(18rem * .8);
+            .codetag.slash{
+                width: 6rem;
+            }
+            .codetag.open, .codetag.close{
+                width: 1.7rem;
+            }
+        }
+        @include mobile{
+            .codetag.slash{
+                width: calc(7rem * .8);
+            }
+            .codetag.open, .codetag.close{
+                width: calc(1.7rem * .8);
+            }
+        }
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        transform: translate(0, -50%);
+        align-self: center;
+        display: flex;
+        align-items: center;
+
+        .section-header{
+            @include md{
+                font-size: calc(3.5rem * .65);
+                padding: 0 1rem;
+            }
+            @include mobile{
+                font-size: calc(3.5rem * .68);
+                padding: 0 .5rem;
+            }
+            font-size: 3.5rem;
+            padding: 0 1.5rem;
+        }
+
+        .codetag{
+            width: 2rem;
+            align-self: center;
+            filter: drop-shadow(0px 3px 2px rgba(black, .16));
+        }
+
+        .slash{
+            position: absolute;
+            width: 7rem;
+            top:    50;
+            left:  50%;
+            transform: translate(-50%, 0);
+            z-index: -1;
+        }
+
+    }
+
+    //Stamp
+    .stamp{
+        @include md{
+            width: 17vw;
+            margin: 5vh auto auto auto;
+        }
+        position: absolute;
+        width: 9.35rem;
+        max-width: 20vw;
+        z-index: -1;
+    }
+    
+    .blue{
+        right: 5%;
+        top: 20%;
+    }
+    
+    .cream{
+        left: 5%;
+        bottom: 20%;
+    }
 }
 
 //all additional images
@@ -53,6 +141,12 @@
     max-height: 1200px;
 }
 .milestone-cta::after{
+    @include lg{
+        width: calc(.45rem * .85);
+    }
+    @include mobile{
+        width: calc(.45rem * .7);
+    }
     content: " ";
     width: .45rem;
     height: inherit;
@@ -61,7 +155,6 @@
     top :0;
     left: 50%;
     transform: translate(-50%, 0);
-
 }
 
 .timeline{
@@ -181,3 +274,5 @@
         margin: auto;
     }
 }
+
+

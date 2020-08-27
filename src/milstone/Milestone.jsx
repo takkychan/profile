@@ -59,6 +59,16 @@ export default function Milstone() {
     return (
         <>
             <section id="milestone" className="milestone-section">
+                <img src={stampBlue} alt="" className="stamp blue"/>
+                <img src={stampCream} alt="" className="stamp cream"/>
+                <div className="codetag-cta">
+                            <img src={openCodetag} alt="" className="codetag open"/>
+                                <div className="section-header">
+                                    Milestone
+                                </div>
+                            <img src={closeCodetag} alt="" className="codetag close"/>
+                            <img src={slashCodetag} alt="" className="codetag slash"/>
+                </div>
                 <img src={airballoon} alt="" className="airballoon"/>
                 <div className="milestone-cta">
                     {/* <div className="codetag-cta">
