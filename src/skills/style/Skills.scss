@@ -179,7 +179,7 @@
     @include lg{
         min-width: 90%;
     }
-    @include md{
+    @include sm{
         flex-direction: column;
      
     }
@@ -209,8 +209,8 @@
     //SKills
 
     .skill-card{
-        @include lg{
-           
+        @include md{
+            height: auto;
         }
         display: flex;
         flex-flow: column;
