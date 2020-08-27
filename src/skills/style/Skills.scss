@@ -187,9 +187,12 @@
         flex-direction: column;
      
     }
+ 
     box-shadow:  0px 3px 30px rgba(black, .3);
     outline: none;
     position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
     min-width: 47rem;
     width: 60%;
     height: 85%;
@@ -206,8 +209,8 @@
     //SKills
 
     .skill-card{
-        @include md{
-            flex: unset;
+        @include lg{
+           
         }
         display: flex;
         flex-flow: column;
@@ -216,21 +219,22 @@
 
         //Card-Header
         .skill-card-header{
-            @include md{
-                flex: unset;
-                padding: 2%;
+            @include lg{
+                
             }
             height: 5rem;
             width: 100%;
             display: flex;
             .skill-card-title{
                 @include xl{
+                   
+                }
+                @include lg{
                     font-size: calc(1.8rem * .9);
                 }
                 font-size: 1.8rem;
                 padding: 1% 0 0 5%;
                 align-self: center;
-            
             }
         }
         .border{
@@ -242,8 +246,7 @@
         //Card-content
         .skill-content{
             @include lg{
-                flex-direction: row;
-                padding: 2rem 0;
+               
             }
             @include md{
                 
@@ -254,19 +257,29 @@
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
+            @include md{
+                .skill-details:nth-child(odd){
+                    background-color: $default-bg;
+                }
+                width: 100%;
+            }
             .skill-details{
-                @include lg{
-                    flex-direction: column;
+                @include xl{
+                  
+                   
+                }
+
+                @include md{
+                    flex-flow: column;
                     height: 100%;
-                    align-items: center;
-                    margin: 0 auto;
+                    justify-content: space-around;
+                    padding: 1rem;
                 }
                 display: flex;
                 .skill-subject{
-                    @include lg{
-                        flex-direction: column;
-                        height: 22%;
-                        width: 10vw;
+                    @include md{
+                        margin:  0;
+                        width: 100%;
                     }
                     width: 30%;
                     margin: auto 1rem;
@@ -274,23 +287,26 @@
                     align-items: center;
                     .skill-logo{
                         @include xl{
-                            width: calc(4.2rem * .85);
+                           
                         }
                         @include lg{
-                            width: calc(4.2rem * .7);
+                            width: calc(4.2rem * .8);
+                        }
+                        @include md{
+                            width: calc(4.2rem * .6);
+                        }
+                        @include mobile{
+                            width: calc(4.2rem * .5);
                         }
                         margin: auto 0;
                         width: 4.2rem;
                     }
                     .skill-item-title{
                         @include xl{
-                            font-size: calc(1.2rem * .9);
-                            justify-self: initial;
-                            padding: 1rem 1.5rem;
+                      
                         }
                         @include lg{
-                            text-align: center;
-                            font-size: calc(1.2rem * .85);
+                            font-size: calc(1.1rem * .9);
                         }
                         align-self: center;
                         font-size: 1.1rem;
@@ -300,32 +316,30 @@
                 }
                         
                 .rating-group{
-                    @include lg{
-                        flex-direction: column;
-                        align-items: center;
-                        margin: 1.5rem 0;
-                        height: 70%;
+                    @include md{
+                        width: 100%;
                     }
                     width: 65%;
                     display: flex;
                     justify-content: flex-start;
                     .puzzle{
                         @include xl{
-                           width: calc(4.5rem * .9);
+                           
                         }
                         
                         @include lg{
-                            width: calc(4.5rem * .9);
-                            margin: .7rem 0;
-                            
+                            width: calc(4.3rem * .8);
                         }
                         
                         @include md{
-                            width: calc(4.5rem * .9);
-                           
+                            width: calc(4rem * .7);
+                        }
+                        @include mobile{
+                            width: calc(4rem * .65);
+                            margin: 0 3% 0 0;
                         }
                         width: 4.5rem;
-                        margin: 0 2%;
+                        margin: 0 4% 0 0;
                     }
                 }
             }
@@ -387,7 +401,7 @@
   .ReactModal__Overlay--after-open {
     opacity: 1;
   }
-  
+
   .ReactModal__Overlay--before-close {
     opacity: 0;
   }
