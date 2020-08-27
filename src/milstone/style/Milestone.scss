@@ -167,7 +167,7 @@
         }
         display: flex;
         justify-content: space-around;
-        // transform: translate(0, -100%);
+        transform: translate(0, -100%);
         .banner{
             @include lg{
                 width: calc(16.25rem * .85);
