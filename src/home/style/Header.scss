@@ -24,12 +24,18 @@
         width: 11rem;
         cursor: pointer;
     }
+   
 
     .nav-items{
         justify-self: flex-end;
         display: flex;
         align-items: center;
+        .nav-item:hover{
+            color: $highlight;
+            font-size: (1.25rem * 1.025);
+        }
         .nav-item{
+            transition: all .2s ease;  
             font-size: 1.25rem;
             padding: 0 1.5rem;
             @include xl{

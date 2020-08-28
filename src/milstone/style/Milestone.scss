@@ -140,6 +140,8 @@
     height: 900px;
     max-height: 1200px;
 }
+
+
 .milestone-cta::after{
     @include lg{
         width: calc(.45rem * .85);
@@ -233,11 +235,13 @@
         }
     }
 
-    .items-container:hover  .items-wrapper::after{
+
+
+    .items-container:hover.items-container::after{
         background-color: $dark;
     }
 
-    .items-wrapper::after{ 
+    .items-container::after{ 
         @include lg{
             width: .75rem;
             height: .75rem;

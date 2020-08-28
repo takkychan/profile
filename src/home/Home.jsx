@@ -90,7 +90,7 @@ export default function Home() {
                                 <h5 className="aboutme">About Me</h5>
                                 <div className="border"></div>
                             </div>
-                            <p className="card-body">I am a Full Stack Web Developer and a Graphic Designer who are passionated, creative and a fast learner. I am also a fresh graduate from The Hong Kong Polytechnic Univesity. This website is my portfolio website, and I created it along from design, implementation to deployment, all from Scratch. I can do more than you think. If you are interested in my work, please continue to explore  OR</p>
+                            <p className="card-body">I am a Full Stack Web Developer and a UI/UX Designer who are passionated, creative and a fast learner. Meanwhile, I am also a fresh graduate from The Hong Kong Polytechnic Univesity. This website is my portfolio website, and I created it along from design, implementation to deployment, all from scratch. I always keep updating and equip myself with the latest technology and new features. If you are interested in my work, please continue to explore  OR</p>
                             <div className="card-footer">
                                 <h5 className="resume">Download my resume</h5>
                                 <div className="border"></div>
