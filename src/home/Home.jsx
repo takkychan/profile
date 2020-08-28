@@ -1,5 +1,6 @@
 //libraries
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
+import {TweenLite, Power3, gsap} from 'gsap'
     // import {useSpring, animated, interpolate} from 'react-spring';
     // import {Spring} from 'react-spring/renderprops';
     // import lax from 'lax.js';
@@ -22,33 +23,69 @@ import slashCodetag from '../img/slash-codetag.png'
 // import closeCodetag from '../img/close-codetag.svg'
 // import slashCodetag from '../img/slash-codetag.svg'
 
+
 export default function Home() {
+    
+    const greetings = useRef(null)
+    const dynamic = useRef(null)
+    const introMsg = useRef(null)
+
+     useEffect(() => {
+        TweenLite.from(
+            greetings.current, .8,{
+                opacity: 0,
+                y: -5,
+                x: -100,
+                delay: .4,
+                ease: Power3.easeInOut
+            }
+        )
+        TweenLite.from(
+            introMsg.current, .8,{
+                opacity: 0,
+                y: -5,
+                x: 100,
+                delay: .8,
+                ease: Power3.easeInOut
+            }
+        )
+        TweenLite.from(
+            dynamic.current, .8,{
+                opacity: 0,
+                y: 100,
+                delay: 1.2,
+                ease: Power3.easeInOut
+            }
+        )
+        
+    }, [])
+
 
     return (
         <>
             <section id="home" className="home-section">
-                <Header />
+                <Header/>
                 <img src={cloud} alt="" className="cloud-img left"/>
                 <img src={cloud} alt="" className="cloud-img right"/>
                 <div className="home-cta">
                     <div className="intro">
-                        <div className="welcome">
+                        <div className="welcome"  ref={greetings}>
                             <h3 className="greetings">Hi, I am</h3>
                             <h2 className="myname">Takky Chan</h2>
                         </div>
-                        <div className="codetag-cta">
+                        <div className="codetag-cta" ref={dynamic}>
                             <img src={openCodetag} alt="" className="codetag open"/>
                                 <div className="dynamic">
                                     <span className="i">I</span>
-                                    <span className="word">DESIGN</span>
+                                    <span className="word"></span>
                                 </div>
                             <img src={closeCodetag} alt="" className="codetag close"/>
                             <img src={slashCodetag} alt="" className="codetag slash"/>
                         </div>
                     </div>
 
-                    <div className="intro-msg">
-                        <div className="intro-card">
+                    <div className="intro-msg" >
+                        <div className="intro-card" ref={introMsg}>
                             <div className="card-header">
                                 <h5 className="aboutme">About Me</h5>
                                 <div className="border"></div>

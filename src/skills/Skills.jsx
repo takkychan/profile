@@ -255,6 +255,7 @@ export default function Skills() {
                             <>
                                 <div className="skill-container">
                                     <button className="egg-btn" onClick= {()=> {
+                                        document.body.style.overflow = 'hidden';
                                         setopenEgg(true);
                                         setcurrentSkill(Skill);
                                     }}>
@@ -277,7 +278,10 @@ export default function Skills() {
 
                 <Modal className="Modal" overlayClassName="Overlay"
                     isOpen = {openEgg}
-                    onRequestClose={() => setopenEgg(false)}
+                    onRequestClose={() => {
+                        setopenEgg(false)
+                        document.body.style.overflow = 'unset';
+                    }}
                     closeTimeoutMS={200}
                 >
                     <div className="skill-card">
@@ -315,6 +319,7 @@ export default function Skills() {
                     </div>
                     <button className="close-btn"  onClick= {()=> {
                                         setopenEgg(false);
+                                        document.body.style.overflow = 'unset';
                     }}>
                                         <img src={close} alt="" className="close"/></button>
                     <button className="arrow-btn"><img src={arrow} alt="" className="arrow"/></button>

@@ -1,10 +1,13 @@
 //libraries
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
+import { useInView } from "react-intersection-observer"
+import { motion, useAnimation } from "framer-motion"
     // import {useSpring, animated, interpolate} from 'react-spring';
     // import {Spring} from 'react-spring/renderprops';
     // import lax from 'lax.js';
     import {useLaxElement, useLax}  from 'use-lax'
-    import { motion } from "framer-motion"
+    import {gsap} from 'gsap'
+    import {ScrollTrigger} from 'gsap/ScrollTrigger'
 //components
 
 //css
@@ -18,33 +21,46 @@ import openCodetag from '../img/open-codetag.png'
 import closeCodetag from '../img/close-codetag.png'
 import slashCodetag from '../img/slash-codetag.png'
 
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Milstone() {
-    // let starting = 1100;
-    // let ending = 1250;
+ 
+        let fl = useRef(null);
+        let hkcc = useRef(null);
+        let polyu = useRef(null);
+        let dev = useRef(null);
+
     const [MilestoneItems, setMilestoneItems] = useState([
-        {
-            type: 'education',
-            link: 'mc',
-            title: 'Methodist College',
-            date:  '2009 - 2015',
-            //ref: mc,
-            isActive: true
-        },
+        // {
+        //     type: 'education',
+        //     link: 'mc',
+        //     title: 'Methodist College',
+        //     date:  '2009 - 2015',
+        //     ref: mc,
+        //     isActive: true
+        // },
         {
             type: 'education',
             link: 'hkcc',
             title: 'HKCC Information Technology',
             date:  '2015 - 2017',
-            //ref: hkcc,
+            ref: hkcc,
             isActive: true
         },
         {
             type: 'career',
             link: 'developer',
             title: 'Web Developer',
-            date:  '2017 - present',
-            //ref: dev,
+            date:  '2017 - 2018',
+            ref: dev,
+            isActive: true
+        },
+        {
+            type: 'career',
+            link: 'freelance',
+            title: 'Web Developer (Part-time)',
+            date:  '2018 - present',
+            ref: fl,
             isActive: true
         },
         {
@@ -52,10 +68,48 @@ export default function Milstone() {
             link: 'polyu',
             title: 'The Hong Kong Polytechnic University Information Security',
             date:  '2018 - 2020',
-            //ref: polyu,
+            ref: polyu,
             isActive: true
         }
     ]);
+
+            //GSAP 
+            useEffect(() =>{
+                MilestoneItems.forEach(MilestoneItem => {
+                    const {ref, type} = MilestoneItem;
+                    if (type === 'career') {
+                        gsap.from(ref.current, {
+                            scrollTrigger: {
+                                trigger: ref.current,
+                                toggleActions: "restart none none reverse", 
+                            },
+                            x: 50,
+                            y: 150,
+                            opacity: 0,
+                            duration: .5,
+                            pin: true,
+                            ease: "ease",
+                        });
+                    }
+                    else{
+                    gsap.from(ref.current, {
+                        scrollTrigger: {
+                            trigger: ref.current,
+                            toggleActions: "restart none none reverse",   
+                        },
+                        x: -50,
+                        y: 150,
+                        opacity: 0,
+                        duration: .5,
+                        pin: true,
+                        ease: "ease",         
+                    });
+                }
+                });
+            }, [])
+        
+
+
     return (
         <>
             <section id="milestone" className="milestone-section">
@@ -88,14 +142,17 @@ export default function Milstone() {
                         </div>
                         {MilestoneItems.map(MilestoneItem => {
                             const {date, title, type, link, isActive} = MilestoneItem;
+                            let{ref} = MilestoneItem;
                             if (isActive){
                             return (
                             <>
-                                <div className={"items-container"}  id={type}>
-                                    <span className="date">{date}</span>
-                                    <div className="item-container" id={link}>
-                                        <div id="item" className={link}>{title}</div>
-                                    </div>
+                                <div className={"items-container"}>
+                                    <div className="items-wrapper"   id={type} ref={ref}>
+                                        <span className="date">{date}</span>
+                                        <div className="item-container" id={link}>
+                                            <div id="item" >{title}</div>
+                                        </div>
+                                    </div> 
                                 </div>
                             </>
                             )

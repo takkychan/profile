@@ -208,7 +208,13 @@
         z-index: 1;
         cursor: pointer;
         position: relative;
-        margin: 2.81rem 0 0 0;
+        margin: 3.5rem 0 0 0;
+        .items-wrapper{
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+        }
+        align-items: flex-end;
     }
     #career{
         display: flex;

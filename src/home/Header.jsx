@@ -1,7 +1,8 @@
 //libraries
-import React, {useState} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import {Spring} from 'react-spring/renderprops'
 import SmoothScroll from 'smooth-scroll'
+import {TweenLite, Power3, gsap} from 'gsap'
 //components
 import Nav from './Nav.jsx'
 //css
@@ -10,6 +11,21 @@ import './style/Header.scss'
 import logo from '../img/Logo.png'
 
 export default function Header() {
+    //GSAP
+    const theHeader = useRef(null)
+
+     useEffect(() => {
+        TweenLite.from(
+            theHeader.current, .8,{
+                opacity: 0,
+                y: -50,
+                ease: Power3.easeInOut
+            }
+        )
+    }, [])
+
+
+    //Scroll
     const scroll = new SmoothScroll('a[href*="#"]', {
         speed: 500,
         speedAsDuration: true
@@ -45,7 +61,7 @@ export default function Header() {
 
     return (
         <>
-                <div className="header" >
+                <div className="header" ref={theHeader}>
                     <img src={logo} alt="" className="logo"/>
                 
                     <Nav navItems = {navItems}/> 
