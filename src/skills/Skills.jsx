@@ -241,7 +241,7 @@ export default function Skills() {
                 <div className="codetag-cta">
                         <img src={openCodetag} alt="" className="codetag open"/>
                             <div className="section-header">
-                                Skills
+                                My Skills
                             </div>
                         <img src={closeCodetag} alt="" className="codetag close"/>
                         <img src={slashCodetag} alt="" className="codetag slash"/>
