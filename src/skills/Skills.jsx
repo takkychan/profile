@@ -1,6 +1,8 @@
 //libraries
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import Modal from 'react-modal'
+import {gsap} from 'gsap'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
     // import {useSpring, animated, interpolate} from 'react-spring';
     // import {Spring} from 'react-spring/renderprops';
     // import lax from 'lax.js';
@@ -57,9 +59,53 @@ import wordpress from '../img/skillItem/wordpress.svg'
 import arrow from '../img/arrow.svg'
 import close from '../img/close.svg'
 
-
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Skills() {
+
+    const basic = useRef(null)
+    const frontend = useRef(null)
+    const backend = useRef(null)
+    const graphic = useRef(null)
+    const others = useRef(null)
+    const mySkills = useRef(null)
+
+    //GSAP 
+    useEffect(() =>{
+        gsap.from(mySkills.current, {
+            scrollTrigger: {
+                trigger: mySkills.current,
+                toggleActions: "restart none none reverse", 
+                start: "center bottom"
+            },
+            y: 50,
+            x: 20,
+            opacity: 0,
+            duration: .5,
+            pin: true,
+            ease: "easeInOut",
+        });
+
+        SkillsList.forEach(Skill => {
+            const {ref} = Skill;
+            gsap.from(ref.current, {
+                scrollTrigger: {
+                    trigger: ref.current,
+                    toggleActions: "restart none none reverse", 
+                },
+                y: 50,
+                x: 20,
+                opacity: 0,
+                duration: .5,
+                scale: .3,
+                pin: true,
+                ease: "easeInOut",
+            });
+        });
+           
+
+        }, [])
+
 
     const SkillsList = [
         {
@@ -68,7 +114,7 @@ export default function Skills() {
             img:    basicEgg,
             des:    'Basic knowledge and fundamentals for modern web development',
             isActive: true,
-            //ref:    basic,
+            ref:    basic,
             item:   [
                 {
                     skillName: "Google Search",
@@ -98,7 +144,7 @@ export default function Skills() {
             img:    frontendEgg,
             des:     'Frameworks, knowledges, senses and whatever user can see or feel',
             isActive: true,
-            //ref:    frontend,
+            ref:    frontend,
             item:   [
                 {
                     skillName: "React",
@@ -128,7 +174,7 @@ export default function Skills() {
             img:     backendEgg,
             des:     'Handling data, security and performance',
             isActive: true,
-            //ref:    backend,
+            ref:    backend,
             item:   [
                 {
                     skillName: "NodeJS",
@@ -158,7 +204,7 @@ export default function Skills() {
             img:    graphicEgg,
             des:    'Experience of graphical edits and creation.',
             isActive: true,
-            //ref:    graphic,
+            ref:    graphic,
             item:   [
                 {
                     skillName: "Adobe XD",
@@ -207,7 +253,7 @@ export default function Skills() {
             img:    othersEgg,
             des:    'Some other skills that  may or may not related to web development',
             isActive: true,
-            // ref:    others,
+             ref:    others,
             item:   [
                 {
                     skillName: "WordPress",
@@ -238,7 +284,7 @@ export default function Skills() {
                 <div className="space"></div>
                 <img src={crawl} alt="" className="crawl"/>
 
-                <div className="codetag-cta">
+                <div className="codetag-cta" ref={mySkills}>
                         <img src={openCodetag} alt="" className="codetag open"/>
                             <div className="section-header">
                                 My Skills
@@ -249,11 +295,11 @@ export default function Skills() {
 
                 <div className="skills-container">
                     {SkillsList.map( (Skill) => {
-                        const {title, link, des, img, isActive} = Skill;
+                        const {title, link, des, img, ref, isActive} = Skill;
                         if(isActive){
                             return (
                             <>
-                                <div className="skill-container">
+                                <div className="skill-container" ref={ref}>
                                     <button className="egg-btn" onClick= {()=> {
                                         document.body.style.overflow = 'hidden';
                                         setopenEgg(true);

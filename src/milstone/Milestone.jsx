@@ -29,6 +29,7 @@ export default function Milstone() {
         let hkcc = useRef(null);
         let polyu = useRef(null);
         let dev = useRef(null);
+        const milestone = useRef(null);
 
     const [MilestoneItems, setMilestoneItems] = useState([
         // {
@@ -75,6 +76,19 @@ export default function Milstone() {
 
             //GSAP 
             useEffect(() =>{
+                gsap.from(milestone.current, {
+                    scrollTrigger: {
+                        trigger: milestone.current,
+                        toggleActions: "restart none none reverse", 
+                        start: "bottom bottom"
+                    },
+                    y: 50,
+                    x: -20,
+                    opacity: 0,
+                    duration: .5,
+                    pin: true,
+                    ease: "easeInOut",
+                });
                 MilestoneItems.forEach(MilestoneItem => {
                     const {ref, type} = MilestoneItem;
                     if (type === 'career') {
@@ -115,7 +129,7 @@ export default function Milstone() {
             <section id="milestone" className="milestone-section">
                 <img src={stampBlue} alt="" className="stamp blue"/>
                 <img src={stampCream} alt="" className="stamp cream"/>
-                <div className="codetag-cta">
+                <div className="codetag-cta" ref={milestone}>
                             <img src={openCodetag} alt="" className="codetag open"/>
                                 <div className="section-header">
                                     Milestone
