@@ -23,6 +23,8 @@ import cloudDark from '../img/cloud-dark.svg'
 import openCodetagDark from '../img/open-codetag-dark.png'
 import closeCodetagDark from '../img/close-codetag-dark.png'
 import slashCodetagDark from '../img/slash-codetag-dark.png'
+//resume
+import ChanHokWanTakkyResume from '../img/ChanHokWanTakky.pdf'
 
 
 export default function Home(props) {
@@ -93,7 +95,7 @@ export default function Home(props) {
                             </div>
                             <p className="card-body">I am a Full Stack Web Developer and a UI/UX Designer who are passionated, creative and a fast learner. Meanwhile, I am also a fresh graduate from The Hong Kong Polytechnic Univesity. This website is my portfolio website, and I created it along from design, implementation to deployment, all from scratch. I always keep updating and equip myself with the latest technology and new features. If you are interested in my work, please continue to explore  OR</p>
                             <div className="card-footer">
-                                <a href="../img/(CV)ChanHokWanTakky.pdf" download="(CV)ChanHokWanTakky" className="resume"><i class="fas fa-download"></i>Download my resume</a>
+                                <a href={ChanHokWanTakkyResume} download="(CV)ChanHokWanTakky" className="resume"><i class="fas fa-download"></i>Download my resume</a>
                                 <div className="border"></div>
                             </div>
                         </div>
