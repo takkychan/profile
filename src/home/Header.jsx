@@ -89,8 +89,8 @@ export default function Header(props) {
                     </div>
                 <div className="header" ref={theHeader}>
              
-                    <img src= {theme == 'light'? logo : logoDark} 
-                    alt="" className="logo"/> 
+                    <a href="https://takkychan.github.io/profile"><img src= {theme == 'light'? logo : logoDark} 
+                    alt="" className="logo"/> </a>
              
                     <Nav navItems = {navItems}/> 
                 </div>

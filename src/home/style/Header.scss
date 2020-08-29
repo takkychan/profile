@@ -35,9 +35,9 @@
                 transition: all .2s ease;
             }
             .link-contact:hover{
-                background-color: var(--font-color);
+                background-color: var( --contact-color);
                 a{
-                    color: var(--white)
+                    color: var(--bg-color)
                 }
             }
         justify-self: flex-end;
