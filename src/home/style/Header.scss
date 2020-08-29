@@ -77,7 +77,14 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+        transform: translate(0, -25%);
         .nav-item{
+            @include md{
+                font-size: calc(2rem * 0.85);
+            }
+            @include mobile{
+                font-size: calc(2rem * 0.75);
+            }
             font-size: 2rem;
             color: white;
         }
