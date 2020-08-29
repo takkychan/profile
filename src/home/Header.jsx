@@ -72,7 +72,7 @@ export default function Header(props) {
         <>     
                 <div className="hamburger-menu">
                         <input type="checkbox" className="toggler" onChange={() => {
-                            !openMenu ?  document.body.style.overflow = 'hidden' :  document.body.style.overflow = 'unset';
+                            !openMenu ?  document.body.style.overflowY = 'hidden' :  document.body.style.overflowY = 'unset';
                             setOpenMenu(!openMenu)
                         }}/>
                         <div className="hamburger">
@@ -88,7 +88,7 @@ export default function Header(props) {
                     :
                     null
                 } */}
-                    <div className="burger-header" style={openMenu ? {right: "0"} : {right: "-150%"}}>
+                    <div className="burger-header" style={openMenu ? {transform: "translate(0, 0)"} : {transform: "translate(100%, 0)"}}>
                         <Nav navItems = {navItems}/> 
                     </div>
                 <div className="header" ref={theHeader}>

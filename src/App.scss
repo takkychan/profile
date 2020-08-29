@@ -27,6 +27,7 @@
         --black: black;
         --night: #0F161D;
         --card: rgba(255, 255, 255, 0.959);
+       
     }
 
     .light{
@@ -83,6 +84,7 @@
          color: var(--font-color);
          z-index: -100;
          transition: background .5s ease-in-out, color 1s ease-in-out;
+         overflow-x: hidden;
      }
 
     h1,h2,h3,h4,h5,h6{
