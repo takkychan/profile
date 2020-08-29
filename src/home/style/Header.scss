@@ -74,13 +74,59 @@
     justify-content: center;
     background-color: rgba(24, 39, 51, 0.85);
 
+    .media-cta{
+        @include md{
+            .github, .email, .phone{
+                .fas, .fab{
+                    font-size: 2.5rem !important;
+                }
+            }
+        }
+        padding: 0 0 0 0;
+        display: grid !important;
+        transition: color .2s ease;
+        gap: 2rem;
+        grid-template-columns: 1fr;
+        align-self: center;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+        width: 40%;
+        color: white;
+        display: flex;
+        .github, .email, .phone{
+            cursor: pointer;
+            .fas, .fab{
+                font-size: 3rem;
+            }
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            > div{
+                padding: 5px 0;
+                a{
+                    transition: color .2s ease;
+                    color: white;
+                }
+            }
+        }
+        .github:hover, .email:hover, .phone:hover{
+            color: var(--highlight);
+            a{
+                color: var(--highlight);
+            }
+        }
+    }
+
     .nav-items{
         height: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        transform: translate(0, -25%);
+        transform: translate(0, -5%);
         .nav-item{
             @include md{
                 font-size: calc(2rem * 0.85);
@@ -197,3 +243,5 @@
         display: flex;
     }
 }
+
+
