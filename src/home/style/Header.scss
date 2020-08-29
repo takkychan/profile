@@ -71,6 +71,7 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(24, 39, 51, 0.85);
+
     .nav-items{
         height: 50%;
         display: flex;
@@ -125,11 +126,19 @@
             
             transform: rotate(135deg);
             div{
-                width: 100%;
+                @include md{
+                    height: 5px;
+                }
+                width: 90%;
                 background-color: white;
+                
             }
             > div:before, div:after{
+                @include md{
+                    height: 5px;
+                }
                 top: 0;
+                width: 90%;
                 transform: rotate(90deg);
                 background-color: white;
             }
@@ -177,5 +186,12 @@
     .hamburger-menu{
         width: 2.5rem;
         height: 2.5rem;
+    }
+}
+
+.hamburger-menu{
+    display: none;
+    @include xl{
+        display: flex;
     }
 }

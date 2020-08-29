@@ -160,7 +160,7 @@
 
 .themeSwitch, .goTop{
     @include lg{
-       width: calc(2.7rem * .9);
+       width: calc(2.6rem * .9);
        height:calc(2.7rem * .9);
        .fas{
            font-size: calc(1.3rem * .9)
@@ -191,7 +191,7 @@
     align-items: center;
     justify-content: center;
     .fas{
-       font-size: 1.3rem;
+       font-size: 1.1rem;
     }
 }
 

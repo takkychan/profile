@@ -186,6 +186,10 @@
             flex-flow: column;
             align-items: flex-end;
             padding-bottom: 2rem; 
+            .fa-download{
+                transform: scale(0.8);
+                padding: 0 3px 0 0;
+            }
             .resume{
                 @include md{
                     font-size: calc(1.7rem * .75);
@@ -198,6 +202,11 @@
                 font-family: $article-font;
                 font-weight: 700;
                 padding:  .5rem 3rem .5rem 0;
+                transition: color .2s ease;
+            }
+            .resume:hover{
+                color: var(--highlight);
+                transform: scale(1.005);
             }
             .border{
                 width: 67%;
