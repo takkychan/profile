@@ -10,8 +10,8 @@ export default function Nav(props) {
         <ul className="nav-items">
             {navItems.map(navItem => 
                 navItem.isActive ? 
-                <li>
-                    <a data-scroll href={navItem.link} className="nav-item">{navItem.name}</a>
+                <li key={navItem.id} className={"link-"+ navItem.id}>
+                    <a data-scroll href={navItem.link} className="nav-item"  >{navItem.name}</a>
                 </li>
                 : null
             )}
@@ -22,7 +22,7 @@ export default function Nav(props) {
             {/* <button className="hamburger">
                 <img src={hamburger} alt=""/>
             </button> */}
-            <img src={hamburger} alt="" className="hamburger"/>
+            
         </ul>
         
     )

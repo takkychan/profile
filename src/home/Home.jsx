@@ -18,14 +18,15 @@ import cloud from '../img/cloud.svg'
 import openCodetag from '../img/open-codetag.png'
 import closeCodetag from '../img/close-codetag.png'
 import slashCodetag from '../img/slash-codetag.png'
+//Dark Mode
+import cloudDark from '../img/cloud-dark.svg'
+import openCodetagDark from '../img/open-codetag-dark.png'
+import closeCodetagDark from '../img/close-codetag-dark.png'
+import slashCodetagDark from '../img/slash-codetag-dark.png'
 
-// import openCodetag from '../img/open-codetag.svg'
-// import closeCodetag from '../img/close-codetag.svg'
-// import slashCodetag from '../img/slash-codetag.svg'
 
-
-export default function Home() {
-    
+export default function Home(props) {
+    const {theme} = props
     const greetings = useRef(null)
     const dynamic = useRef(null)
     const introMsg = useRef(null)
@@ -64,7 +65,7 @@ export default function Home() {
     return (
         <>
             <section id="home" className="home-section">
-                <Header/>
+                <Header theme = {theme}/>
                 <img src={cloud} alt="" className="cloud-img left"/>
                 <img src={cloud} alt="" className="cloud-img right"/>
                 <div className="home-cta">
@@ -74,13 +75,13 @@ export default function Home() {
                             <h2 className="myname">Takky Chan</h2>
                         </div>
                         <div className="codetag-cta" ref={dynamic}>
-                            <img src={openCodetag} alt="" className="codetag open"/>
+                            <img src={theme == 'light' ? openCodetag : openCodetagDark} alt="" className="codetag open"/>
                                 <div className="dynamic">
                                     <span className="i">I</span>
                                     <span className="word"></span>
                                 </div>
-                            <img src={closeCodetag} alt="" className="codetag close"/>
-                            <img src={slashCodetag} alt="" className="codetag slash"/>
+                            <img src={theme == 'light' ? closeCodetag : closeCodetagDark} alt="" className="codetag close"/>
+                            <img src= {theme == 'light' ? slashCodetag : slashCodetagDark} alt="" className="codetag slash"/>
                         </div>
                     </div>
 

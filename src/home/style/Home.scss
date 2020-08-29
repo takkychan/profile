@@ -51,7 +51,7 @@
                 font-size: calc(3.4rem * .7);
             }
             font-size: 3.4rem;
-            color: $highlight;
+            color: var(--highlight);
         }
         .myname{
             @include md{
@@ -110,13 +110,13 @@
                 
             }
             .i{
-                color: $highlight;
+                color: var(--highlight);
             }
         }
 
         .codetag{
             align-self: center;
-            filter: drop-shadow(0px 3px 2px rgba(black, .16));
+            filter:  drop-shadow(0px 3px 2px var(--shadow));
         }
 
         .slash{
@@ -141,11 +141,11 @@
         @include xl{
             width: 100%;
         }
-        box-shadow: 0px 3px 20px rgba(black, .16);
+        box-shadow: 0px 3px 20px var(--shadow);
         height: auto;
         width: 30rem;
         align-self: center;
-        background-color: $bright;
+        background-color: var(--card-color);
         border-radius: 15px;
 
         .card-header{
@@ -164,7 +164,7 @@
             .border{
                 width: 35%;
                 height: .6rem;
-                background-color: $highlight;
+                background-color: var(--highlight);
             }
         }
 
@@ -202,7 +202,7 @@
             .border{
                 width: 67%;
                 height: .6rem;
-                background-color: $highlight;
+                background-color: var(--highlight);
             }
         }
 
@@ -211,15 +211,17 @@
 
 .cloud-img{
     position: absolute;
-    z-index: -1;
+    z-index: 0 !important;
     top:45%;
     left: 3%;
+    opacity: .9 !important;
 }
 .cloud-img.right{
     bottom: 0;
     top: auto;
     left: auto;
     right: 1%;
+    z-index: 1;
 }
 
 //Dynamic Word change

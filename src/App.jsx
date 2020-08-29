@@ -6,25 +6,35 @@ import React, {useState, useEffect} from 'react'
   // import {useLaxElement, useLax, updateLaxElement}  from './use-lax'
   // import { motion } from "framer-motion"
 //components
-// import Landing from './landing/Landing.jsx'
- import Home from './home/Home.jsx'
-import Milestone from './milstone/Milestone.jsx'
-import Skills from './skills/Skills.jsx'
-import Footer from './footer/Footer.jsx'
+// import Landing from './landing/Landing'
+ import Home from './home/Home'
+import Milestone from './milstone/Milestone'
+import Skills from './skills/Skills'
+import Footer from './footer/Footer'
+// import { ThemeProvider } from './ThemeContext'
 //css
 import './App.scss'
 import Milstone from './milstone/Milestone.jsx'
 //images
 
-
 function App() {
+   const [theme, setTheme] = useState('light')
+
   return (
-    <>
-      <Home />
-      <Milestone />
-      <Skills />
-      <Footer />
-    </>
+      <main className={theme}>
+        <a className="goTop" href="#home" ><i class="fas fa-angle-up"></i></a>
+        <button className="themeSwitch" onClick={()=>{
+          theme == 'light' ? setTheme('dark'): setTheme('light')
+        }}>
+          {theme == 'light' ? <i class="fas fa-moon"></i> : <i class="fas fa-sun"></i> }
+        </button>
+
+        <Home theme = {theme} />
+        <Milestone  theme = {theme} />
+        <Skills theme = {theme} />
+        <Footer theme = {theme}/>
+      </main>
+
   );
 }
 

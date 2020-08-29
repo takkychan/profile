@@ -20,11 +20,15 @@ import cloud from '../img/cloud.svg'
 import openCodetag from '../img/open-codetag.png'
 import closeCodetag from '../img/close-codetag.png'
 import slashCodetag from '../img/slash-codetag.png'
+//Dark
+import openCodetagDark from '../img/open-codetag-dark.png'
+import closeCodetagDark from '../img/close-codetag-dark.png'
+import slashCodetagDark from '../img/slash-codetag-dark.png'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Milstone() {
- 
+export default function Milstone(props) {
+        const {theme} = props
         let fl = useRef(null);
         let hkcc = useRef(null);
         let polyu = useRef(null);
@@ -130,12 +134,12 @@ export default function Milstone() {
                 <img src={stampBlue} alt="" className="stamp blue"/>
                 <img src={stampCream} alt="" className="stamp cream"/>
                 <div className="codetag-cta" ref={milestone}>
-                            <img src={openCodetag} alt="" className="codetag open"/>
+                            <img src= {theme == 'light' ? openCodetag : openCodetagDark} alt="" className="codetag open"/>
                                 <div className="section-header">
                                     Milestone
                                 </div>
-                            <img src={closeCodetag} alt="" className="codetag close"/>
-                            <img src={slashCodetag} alt="" className="codetag slash"/>
+                            <img src= {theme == 'light' ? closeCodetag : closeCodetagDark} alt="" className="codetag close"/>
+                            <img src= {theme == 'light' ? slashCodetag : slashCodetagDark} alt="" className="codetag slash"/>
                 </div>
                 <img src={airballoon} alt="" className="airballoon"/>
                 <div className="milestone-cta">

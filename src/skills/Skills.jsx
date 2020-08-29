@@ -58,11 +58,16 @@ import wordpress from '../img/skillItem/wordpress.svg'
 //formodal
 import arrow from '../img/arrow.svg'
 import close from '../img/close.svg'
+//Dark
+import cloudDark from '../img/cloud-dark.svg'
+import openCodetagDark from '../img/open-codetag-dark.png'
+import closeCodetagDark from '../img/close-codetag-dark.png'
+import slashCodetagDark from '../img/slash-codetag-dark.png'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Skills() {
-
+export default function Skills(props) {
+     const {theme} = props
     const basic = useRef(null)
     const frontend = useRef(null)
     const backend = useRef(null)
@@ -285,12 +290,12 @@ export default function Skills() {
                 <img src={crawl} alt="" className="crawl"/>
 
                 <div className="codetag-cta" ref={mySkills}>
-                        <img src={openCodetag} alt="" className="codetag open"/>
+                        <img src={theme == 'light' ? openCodetag : openCodetagDark} alt="" className="codetag open"/>
                             <div className="section-header">
                                 My Skills
                             </div>
-                        <img src={closeCodetag} alt="" className="codetag close"/>
-                        <img src={slashCodetag} alt="" className="codetag slash"/>
+                        <img src={theme == 'light' ? closeCodetag : closeCodetagDark} alt="" className="codetag close"/>
+                        <img src= {theme == 'light' ? slashCodetag : slashCodetagDark}alt="" className="codetag slash"/>
                 </div>
 
                 <div className="skills-container">
@@ -323,6 +328,7 @@ export default function Skills() {
                 </div>
 
                 <Modal className="Modal" overlayClassName="Overlay"
+                    //  style={theme == 'light' ? {content:{backgroundColor: 'white', boxShadow: "0px 3px 30px  var(--shadow)"}} : {content:{backgroundColor: '#313233', color: "white", boxShadow: "0px 3px 30px  var(--shadow)"}}}
                     isOpen = {openEgg}
                     onRequestClose={() => {
                         setopenEgg(false)

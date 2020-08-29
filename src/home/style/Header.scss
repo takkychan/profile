@@ -9,11 +9,10 @@
     }
     display: grid;
     grid-template-columns: .5fr 1fr ;
-    padding:  2rem 2rem;
+    padding:  1.5rem 2rem;
     overflow: hidden;
     width: 90%;
     margin: auto;
-
     .logo{
         @include lg{
             width: calc(11rem * .8 ) ;
@@ -21,18 +20,31 @@
         @include mobile{
             width: calc(11rem * .7) ;
         }
+        transition: all 1s ease-in-out;
         width: 11rem;
         cursor: pointer;
     }
    
 
     .nav-items{
+            .link-contact{
+                background-color: var(--highlight);
+                height: 3rem;
+                @include tocenter;
+                a{color: white; }
+                transition: all .2s ease;
+            }
+            .link-contact:hover{
+                background-color: var(--font-color);
+                a{
+                    color: var(--white)
+                }
+            }
         justify-self: flex-end;
         display: flex;
         align-items: center;
         .nav-item:hover{
             color: $highlight;
-            font-size: (1.25rem * 1.025);
         }
         .nav-item{
             transition: all .2s ease;  
@@ -42,22 +54,121 @@
                 display: none;
             }   
         }
-        .hamburger{
-            @include xl{
-                display: block;
-                width: 3rem;
-                align-self: center;
-            }
-            @include lg{
-                width: calc(3rem * .9);
-            }
-            @include mobile{
-                width: calc(3rem * .8);
-            }
+    }
+}
 
+
+
+.burger-header{
+    transition: all .5s ease-in-out;
+    position: fixed;
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+    margin: 0 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(24, 39, 51, 0.85);
+    .nav-items{
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        .nav-item{
+            font-size: 2rem;
+            color: white;
+        }
+        .nav-item:hover{
+            color: var(--highlight);
+        }
+        .hamburger{
             display: none;
         }
     }
+}
 
 
+@include xl{
+    .hamburger-menu{
+        display: block;
+        position: fixed;
+        top: 2%;
+        right: 7%;
+        z-index: 11;
+        width: 3.5rem;
+        height: 3.5rem;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        @include tocenter;
+
+        .toggler{
+            z-index: 12;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            outline: none;
+            cursor: pointer;
+        }
+        .toggler:checked + .hamburger{
+            
+            transform: rotate(135deg);
+            div{
+                width: 100%;
+                background-color: white;
+            }
+            > div:before, div:after{
+                top: 0;
+                transform: rotate(90deg);
+                background-color: white;
+            }
+        }
+        .hamburger{
+            z-index: 11;
+            position: relative;
+            width: 80%;
+            transition: all .5s ease;
+            div{
+                width: 70%;
+                height: 7px;
+                margin: 0 0 0 auto;
+                background-color: var(--font-color);
+                transition: all .5s ease;
+            }
+            > div:before, div:after{
+                content: "";
+                position: absolute;
+                right: 0;
+                top: -13.5px;
+                width: 100%;
+                height: 7px;
+                background: var(--highlight);
+                margin: 0;
+                transition: all .5s ease;
+            }
+            div:after{
+            top: 13.5px;
+            }
+        }
+      
+    }
+}
+
+@include md{
+    .hamburger-menu{
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+
+@include sm{
+    .hamburger-menu{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 }
