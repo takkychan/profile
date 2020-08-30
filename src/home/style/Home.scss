@@ -238,6 +238,7 @@
 .word:before{
     content: "DESIGN";
     animation: dynamic-word-change 10s infinite ease;
+    -webkit-animation: dynamic-word-change 10s infinite ease;
 }
 
 @keyframes dynamic-word-change{

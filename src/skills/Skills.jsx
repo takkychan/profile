@@ -66,6 +66,14 @@ import slashCodetagDark from '../img/slash-codetag-dark.png'
 
 gsap.registerPlugin(ScrollTrigger)
 
+var progress = 0;
+ScrollTrigger.addEventListener("refreshInit", function() {
+  progress = document.documentElement.scrollTop / ScrollTrigger.maxScroll(window);
+});
+ScrollTrigger.addEventListener("refresh", function() {
+  document.documentElement.scrollTop = progress * ScrollTrigger.maxScroll(window);
+});
+
 export default function Skills(props) {
      const {theme} = props
     const basic = useRef(null)
@@ -76,6 +84,8 @@ export default function Skills(props) {
     const mySkills = useRef(null)
 
     //GSAP 
+ 
+
     useEffect(() =>{
         gsap.from(mySkills.current, {
             scrollTrigger: {
