@@ -157,7 +157,7 @@ export default function Skills(props) {
             title:  'Front-end skills',
             link:   'frontend',
             img:    frontendEgg,
-            des:     'Frameworks, knowledges, senses and whatever user can see or feel',
+            des:     'Frameworks and knowledges that realated to the UI/UX, providing smooth and stylish web experience',
             isActive: true,
             ref:    frontend,
             item:   [
@@ -187,7 +187,7 @@ export default function Skills(props) {
             title:  'Back-end skills',
             link:   'backend',
             img:     backendEgg,
-            des:     'Handling data, security and performance',
+            des:     'Knowledge of handling functionality, data, security and performance.',
             isActive: true,
             ref:    backend,
             item:   [
