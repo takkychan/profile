@@ -261,20 +261,20 @@
 }
 
 @-webkit-keyframes dynamic-word-change{
-    0%{content : "DESIGN"; opacity: 0.5}
-    10%{content : "DESIGN"; opacity: 1}
-    19%{content : "DESIGN"; opacity: 0}
-    20%{content : "CODE"; opacity: 0}
-    30%{content : "CODE"; opacity: 1}
-    39%{content : "CODE"; opacity: 0}
-    40%{content : "BUILD"; opacity: 0}
-    50%{content : "BUILD"; opacity: 1}
-    59%{content : "BUILD"; opacity: 0}
-    60%{content : "LEARN"; opacity: 0}
-    70%{content : "LEARN"; opacity: 1}
-    79%{content : "LEARN"; opacity: 0}
-    80%{content : "CHILL"; opacity: 0}
-    90%{content : "CHILL"; opacity: 1}
-    99%{content : "CHILL"; opacity: 0}
-    100%{content : "DESIGN"; opacity: 0}
+    0%{content : "DESIGN"; -webkit-opacity: 0.5}
+    10%{content : "DESIGN"; -webkit-opacity: 1}
+    19%{content : "DESIGN"; -webkit-opacity: 0}
+    20%{content : "CODE"; -webkit-opacity: 0}
+    30%{content : "CODE"; -webkit-opacity: 1}
+    39%{content : "CODE"; -webkit-opacity: 0}
+    40%{content : "BUILD"; -webkit-opacity: 0}
+    50%{content : "BUILD"; -webkit-opacity: 1}
+    59%{content : "BUILD"; -webkit-opacity: 0}
+    60%{content : "LEARN"; -webkit-opacity: 0}
+    70%{content : "LEARN"; -webkit-opacity: 1}
+    79%{content : "LEARN"; -webkit-opacity: 0}
+    80%{content : "CHILL"; -webkit-opacity: 0}
+    90%{content : "CHILL"; -webkit-opacity: 1}
+    99%{content : "CHILL"; -webkit-opacity: 0}
+    100%{content : "DESIGN"; -webkit-opacity: 0}
 }
