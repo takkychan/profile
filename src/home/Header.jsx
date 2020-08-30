@@ -45,7 +45,7 @@ export default function Header(props) {
         {
             id: 'milestone',
             link: '#milestone',
-            name: 'Milstone',
+            name: 'Milestone',
             isActive: true
         },
         {

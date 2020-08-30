@@ -56,7 +56,6 @@ import git from '../img/skillItem/git.svg'
 import github from '../img/skillItem/github.svg'
 import wordpress from '../img/skillItem/wordpress.svg'
 //formodal
-import arrow from '../img/arrow.svg'
 import close from '../img/close.svg'
 //Dark
 import cloudDark from '../img/cloud-dark.svg'
@@ -384,7 +383,7 @@ export default function Skills(props) {
                                         document.body.style.overflow = 'unset';
                     }}>
                                         <img src={close} alt="" className="close"/></button>
-                    <button className="arrow-btn"><img src={arrow} alt="" className="arrow"/></button>
+                   
                 </Modal>
                 
             </section>
