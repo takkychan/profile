@@ -19,7 +19,7 @@ export default function Footer() {
                         <a href="https://t.me/takkychan" target="_blank" className="phone"> <i class="fab fa-telegram"></i> <div className="media-name">Telegram</div></a>
                     </div>
                     <div className="copyright">
-                        Copyright © TCDESIGN @ Chan Hok Wan Takky 2020 - A Full stack web developer in Hong Kong 
+                        Copyright © TCDESIGN @ Chan Hok Wan Takky 2020 - A Full stack web developer in Hong Kong.
                     </div>
                 </div>
             </section>
