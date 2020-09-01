@@ -22,6 +22,7 @@
     gap: 1.5rem;
 }
 
+//Introduction Welcoming headings
 
 .intro{
     @include xl{
@@ -38,10 +39,18 @@
     height: 700px;
     
     .welcome{
-        .greetings, .myname{
+        .greetings,.t, .a, .k, .kk, .y, .c, .h, .aa, .n{
             font-family: $article-font;
             font-weight: 700;
+            letter-spacing: 1;
+            transition:  letter-spacing .5s ease;
         }
+        .t:hover, .a:hover, .k:hover, .kk:hover, .y:hover, .c:hover, .h:hover, .aa:hover, .n:hover{
+            cursor: pointer;
+            letter-spacing: 7.7px;
+            color: var(--highlight);
+        }
+
 
         .greetings{
             @include md{
@@ -129,7 +138,7 @@
 
     }
 }
-
+//Introduction Message Card Holder
 .intro-msg{
     @include xl{
         padding: 13% 0;
@@ -218,7 +227,9 @@
     }
 }
 
+//Parallex Cloud Image
 .cloud-img{
+    cursor: pointer;
     position: absolute;
     z-index: 0 !important;
     top:45%;

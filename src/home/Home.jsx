@@ -2,7 +2,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import {TweenLite, Power3, gsap} from 'gsap'
     // import {useSpring, animated, interpolate} from 'react-spring';
-    // import {Spring} from 'react-spring/renderprops';
+import {useSpring, animated, interpolate} from 'react-spring';
     // import lax from 'lax.js';
 import {useLaxElement, useLax}  from 'use-lax'
 import { motion } from "framer-motion"
@@ -32,6 +32,13 @@ export default function Home(props) {
     const greetings = useRef(null)
     const dynamic = useRef(null)
     const introMsg = useRef(null)
+    //Spring Parallex animation
+    const [parallex, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 15, tension: 1500, friction: 100 } }))
+    const [parallex2, set2] = useSpring(() => ({ xy: [0, 0], config: { mass: 15, tension: 1500, friction: 100 } }))
+    const calc1 = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
+    const calc2 = (x, y) => [x - window.innerWidth / 1.7, y - window.innerHeight / 1.7]
+    const trans1 = (x, y) => `translate3d(${x / 20}px,${y / 10}px,0)`
+    const trans2 = (x, y) => `translate3d(${x / -20}px,${y / -10}px,0)`
 
      useEffect(() => {
         TweenLite.from(
@@ -66,15 +73,27 @@ export default function Home(props) {
 
     return (
         <>
-            <section id="home" className="home-section">
+            <section id="home"   className="home-section">
                 <Header theme = {theme}/>
-                <img src={cloud} alt="" className="cloud-img left"/>
-                <img src={cloud} alt="" className="cloud-img right"/>
+                <div className="cloudLeft-cta" onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc1(x, y) })}>   <animated.img src={cloud} alt=""  style={{ transform: parallex.xy.interpolate(trans1) }}className="cloud-img left"/> </div>
+                <div className="cloudLeft-cta" onMouseMove={({ clientX: x, clientY: y }) => set2({ xy: calc2(x, y) })}>   <animated.img src={cloud} alt=""  style={{ transform: parallex2.xy.interpolate(trans2) }}className="cloud-img right"/> </div>
+       
                 <div className="home-cta">
                     <div className="intro">
                         <div className="welcome"  ref={greetings}>
                             <h3 className="greetings">Hi, I am</h3>
-                            <h2 className="myname">Takky Chan</h2>
+                            <h2 className="myname">
+                                <span className="t">T</span>
+                                <span className="a">a</span>
+                                <span className="k">k</span>
+                                <span className="kk">k</span>
+                                <span className="y">y</span>
+                                <span className="backspace"> </span>
+                                <span className="c">C</span>
+                                <span className="h">h</span>
+                                <span className="aa">a</span>
+                                <span className="n">n</span>
+                           </h2>
                         </div>
                         <div className="codetag-cta" ref={dynamic}>
                             <img src={theme == 'light' ? openCodetag : openCodetagDark} alt="" className="codetag open"/>
