@@ -57,17 +57,9 @@ export default function Milstone(props) {
     {
       type: 'career',
       link: 'aam-developer',
-      title: 'AAM - Web Developer',
-      date: '2017 - 2018',
+      title: 'AAM - Web Developer (Parttime)',
+      date: '2017 - 2020',
       ref: aamdev,
-      isActive: true,
-    },
-    {
-      type: 'career',
-      link: 'aam-developer-freelance',
-      title: 'AAM Web Developer (Part-time)',
-      date: '2018 - 2020',
-      ref: aamdevfl,
       isActive: true,
     },
     {
